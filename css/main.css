@@ -214,10 +214,6 @@ img { max-width: 100%; display: block; }
     height: 504px;
     margin-top: 3rem;
     border: 2px solid #d4af37;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(201,169,97,0.05);
     position: relative;
     z-index: 2;
     overflow: hidden;
@@ -227,10 +223,10 @@ img { max-width: 100%; display: block; }
 .hero-image-placeholder::before {
     content: '';
     position: absolute;
-    inset: 4px;
+    inset: 0;
     border: 1px solid rgba(255,215,0,0.3);
     pointer-events: none;
-    z-index: 2;
+    z-index: 3;
 }
 
 .fatima-photo {
@@ -239,8 +235,7 @@ img { max-width: 100%; display: block; }
     object-fit: cover;
     filter: sepia(30%) brightness(0.9) contrast(1.1);
     transition: filter 0.5s;
-    position: relative;
-    z-index: 1;
+    display: block;
 }
 
 .hero-image-placeholder:hover .fatima-photo {

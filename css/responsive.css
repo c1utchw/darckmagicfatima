@@ -1,0 +1,244 @@
+/* ===== АДАПТИВНЫЕ СТИЛИ ===== */
+
+/* ===== ПЛАНШЕТЫ (до 1024px) ===== */
+@media (max-width: 1024px) {
+    .hero {
+        padding: 3rem 1.5rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .reviews-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* ===== МОБИЛЬНЫЕ (до 768px) ===== */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 90vh;
+        padding: 2rem 1rem;
+    }
+    
+    .hero-content {
+        max-width: 100%;
+    }
+    
+    .hero-image-placeholder {
+        width: 250px;
+        height: 350px;
+        margin-top: 2rem;
+    }
+    
+    .whatsapp-btn {
+        padding: 0.9rem 1.8rem;
+        font-size: 1rem;
+    }
+    
+    .services {
+        padding: 4rem 1rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .service-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .certificates {
+        padding: 4rem 1rem;
+    }
+    
+    .certificates-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .reviews {
+        padding: 4rem 1rem;
+    }
+    
+    .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .review-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .video-section {
+        padding: 4rem 1rem;
+    }
+    
+    .video-text {
+        font-size: 1rem;
+    }
+    
+    .footer {
+        padding: 3rem 1rem 1.5rem;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .footer-links li a:hover {
+        padding-left: 0;
+    }
+    
+    .whatsapp-float {
+        bottom: 15px;
+        right: 15px;
+        width: 55px;
+        height: 55px;
+    }
+    
+    .whatsapp-float svg {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* ===== МАЛЕНЬКИЕ МОБИЛЬНЫЕ (до 480px) ===== */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: clamp(2rem, 12vw, 3rem);
+        letter-spacing: 1px;
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(1.2rem, 6vw, 2rem);
+        letter-spacing: 3px;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-image-placeholder {
+        width: 200px;
+        height: 280px;
+        margin-top: 1.5rem;
+    }
+    
+    .placeholder-text {
+        font-size: 1.2rem;
+    }
+    
+    .placeholder-hint {
+        font-size: 0.8rem;
+    }
+    
+    .whatsapp-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .section-title {
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
+        margin-bottom: 2rem;
+    }
+    
+    .service-icon {
+        font-size: 3rem;
+    }
+    
+    .service-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .service-card p {
+        font-size: 0.9rem;
+    }
+    
+    .certificates-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .review-text {
+        font-size: 0.95rem;
+    }
+    
+    .review-author {
+        font-size: 1rem;
+    }
+    
+    .video-container {
+        border-radius: 10px;
+    }
+    
+    .footer-section h3 {
+        font-size: 1.5rem;
+    }
+    
+    .footer-section h4 {
+        font-size: 1.2rem;
+    }
+}
+
+/* ===== ОРИЕНТАЦИЯ LANDSCAPE НА МОБИЛЬНЫХ ===== */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        min-height: 100vh;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 2rem;
+    }
+    
+    .hero-content {
+        text-align: left;
+        max-width: 60%;
+    }
+    
+    .hero-image-placeholder {
+        width: 180px;
+        height: 240px;
+        margin-top: 0;
+        margin-left: 2rem;
+    }
+}
+
+/* ===== ВЫСОКИЕ ЭКРАНЫ ===== */
+@media (min-height: 900px) {
+    .hero {
+        min-height: 100vh;
+    }
+    
+    .services,
+    .certificates,
+    .reviews,
+    .video-section {
+        padding: 8rem 2rem;
+    }
+}
+
+/* ===== ПЕРЕКЛЮЧЕНИЕ НА ТЁМНУЮ ТЕМУ (если пользователь предпочитает) ===== */
+@media (prefers-color-scheme: light) {
+    /* Оставляем тёмную тему по умолчанию для мистического стиля */
+}
+
+/* ===== УМЕНЬШЕННОЕ ДВИЖЕНИЕ (для доступности) ===== */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}

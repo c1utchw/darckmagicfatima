@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Запрещаем индексацию служебных папок
+Disallow: /css/
+Disallow: /js/
+Disallow: /fonts/
+
+# Разрешаем индексацию изображений
+Allow: /images/
+
+# Sitemap
+Sitemap: https://c1utchw.github.io/darckmagicfatima/sitemap.xml
+
+# Crawl-delay (для некоторых поисковиков)
+Crawl-delay: 1

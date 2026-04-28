@@ -540,6 +540,48 @@
     }
 }
 
+/* ===== СТРАНИЦА ОТЗЫВОВ НА МОБИЛЬНЫХ ===== */
+@media (max-width: 768px) {
+    .reviews-stats {
+        gap: 2rem;
+        padding: 2rem 1rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .stat-label {
+        font-size: 0.8rem;
+    }
+    
+    .reviews-detailed {
+        padding: 2rem 1rem;
+    }
+    
+    .review-detailed-item {
+        padding: 1.5rem;
+    }
+    
+    .review-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .review-text-detailed {
+        font-size: 0.9rem;
+    }
+    
+    .review-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .reviews-cta h2 {
+        font-size: 1.6rem;
+    }
+}
+
 /* ===== PRINT ===== */
 @media print {
     .nav,

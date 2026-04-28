@@ -1347,3 +1347,270 @@ img {
 .whatsapp-float:hover svg {
     fill: #ffffff;
 }
+
+/* ===== СТРАНИЦА ОТЗЫВОВ ===== */
+.reviews-stats {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    padding: 3rem 2rem;
+    background: linear-gradient(180deg, #0d0208, #050505);
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+    animation: statFloat 3s ease-in-out infinite;
+}
+
+.stat-item:nth-child(2) { animation-delay: 0.5s; }
+.stat-item:nth-child(3) { animation-delay: 1s; }
+
+@keyframes statFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.stat-number {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    color: var(--color-accent);
+    text-shadow: 0 0 20px rgba(139, 0, 0, 0.5);
+    line-height: 1;
+}
+
+.stat-label {
+    display: block;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.reviews-detailed {
+    padding: 4rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.review-detailed-item {
+    background: linear-gradient(145deg, #0a0a0f, #0d0208);
+    border: 1px solid rgba(30, 20, 20, 0.5);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+    animation: reviewSlideIn 0.8s ease forwards;
+    opacity: 0;
+}
+
+.review-detailed-item:nth-child(1) { animation-delay: 0.1s; }
+.review-detailed-item:nth-child(2) { animation-delay: 0.2s; }
+.review-detailed-item:nth-child(3) { animation-delay: 0.3s; }
+.review-detailed-item:nth-child(4) { animation-delay: 0.4s; }
+.review-detailed-item:nth-child(5) { animation-delay: 0.5s; }
+.review-detailed-item:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes reviewSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.review-detailed-item::before {
+    content: '"';
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-family: var(--font-heading);
+    font-size: 5rem;
+    color: var(--color-accent);
+    opacity: 0.1;
+    line-height: 1;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.review-stars-detailed {
+    color: var(--color-accent);
+    letter-spacing: 3px;
+    font-size: 1.1rem;
+    animation: starTwinkle 2s ease-in-out infinite;
+}
+
+@keyframes starTwinkle {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+.review-service {
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid rgba(30, 20, 20, 0.5);
+    border-radius: 20px;
+}
+
+.review-text-detailed {
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.review-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(30, 20, 20, 0.3);
+    padding-top: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.review-author-detailed {
+    color: var(--color-text-light);
+    font-weight: 500;
+}
+
+.review-date {
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+.reviews-cta {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(180deg, #050505, #0d0208);
+}
+
+.reviews-cta h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--color-accent-bright);
+    margin-bottom: 1rem;
+}
+
+.reviews-cta p {
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+}
+
+/* ===== ДВИЖУЩИЕСЯ ЭЛЕМЕНТЫ ФОНА ===== */
+.floating-orb {
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(139, 0, 0, 0.03) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+    animation: orbFloat 20s ease-in-out infinite;
+}
+
+.floating-orb:nth-child(1) {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+    width: 300px;
+    height: 300px;
+}
+
+.floating-orb:nth-child(2) {
+    top: 60%;
+    right: 10%;
+    animation-delay: 5s;
+    width: 250px;
+    height: 250px;
+}
+
+.floating-orb:nth-child(3) {
+    bottom: 20%;
+    left: 30%;
+    animation-delay: 10s;
+    width: 180px;
+    height: 180px;
+}
+
+@keyframes orbFloat {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.3;
+    }
+    25% {
+        transform: translate(30px, -20px) scale(1.1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translate(-20px, 30px) scale(0.9);
+        opacity: 0.3;
+    }
+    75% {
+        transform: translate(20px, 20px) scale(1.05);
+        opacity: 0.4;
+    }
+}
+
+/* ===== ПЛАВНОЕ ПОЯВЛЕНИЕ КАРТОЧЕК ===== */
+.service-card {
+    opacity: 0;
+    animation: cardFadeIn 0.8s ease forwards;
+}
+
+.service-card:nth-child(1) { animation-delay: 0.1s; }
+.service-card:nth-child(2) { animation-delay: 0.2s; }
+.service-card:nth-child(3) { animation-delay: 0.3s; }
+.service-card:nth-child(4) { animation-delay: 0.4s; }
+.service-card:nth-child(5) { animation-delay: 0.5s; }
+.service-card:nth-child(6) { animation-delay: 0.6s; }
+
+.certificate-item {
+    opacity: 0;
+    animation: cardFadeIn 0.8s ease forwards;
+}
+
+.certificate-item:nth-child(1) { animation-delay: 0.1s; }
+.certificate-item:nth-child(2) { animation-delay: 0.2s; }
+.certificate-item:nth-child(3) { animation-delay: 0.3s; }
+.certificate-item:nth-child(4) { animation-delay: 0.4s; }
+
+.review-card {
+    opacity: 0;
+    animation: cardFadeIn 0.8s ease forwards;
+}
+
+.review-card:nth-child(1) { animation-delay: 0.1s; }
+.review-card:nth-child(2) { animation-delay: 0.2s; }
+.review-card:nth-child(3) { animation-delay: 0.3s; }
+.review-card:nth-child(4) { animation-delay: 0.4s; }
+.review-card:nth-child(5) { animation-delay: 0.5s; }
+.review-card:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes cardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

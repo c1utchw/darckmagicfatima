@@ -1,13 +1,13 @@
 /* ===== ДОПОЛНИТЕЛЬНЫЕ АНИМАЦИИ ===== */
 
+/* ===== ДОПОЛНИТЕЛЬНЫЕ АНИМАЦИИ ===== */
+
 /* ===== ТРЯСКА ДЕРЕВА ===== */
 @keyframes treeShake {
     0%, 100% { transform: rotate(var(--rotation, 0deg)) scale(1); }
     25% { transform: rotate(var(--rotation, -5deg)) scale(1.02); }
     75% { transform: rotate(var(--rotation, 5deg)) scale(1.02); }
 }
-
-/* ===== ПЛАВНОЕ ПОЯВЛЕНИЕ ПРИ СКРОЛЛЕ ===== */
 .fade-in {
     opacity: 0;
     transform: translateY(30px);
@@ -196,24 +196,324 @@ body {
     }
 }
 
-/* ===== АНИМАЦИЯ ДЛЯ РАМКИ ФОТО ===== */
-.hero-image-placeholder {
-    animation: darkBorderPulse 6s ease-in-out infinite;
+/* ===== АВТОМАТИЧЕСКИЕ АНИМАЦИИ (без hover) ===== */
+
+/* ===== ПОЯВЛЕНИЕ ПРИ ЗАГРУЗКЕ ===== */
+body {
+    animation: pageFadeIn 1.2s ease-out;
 }
 
-@keyframes darkBorderPulse {
+@keyframes pageFadeIn {
+    from {
+        opacity: 0;
+        filter: brightness(0.5);
+    }
+    to {
+        opacity: 1;
+        filter: brightness(1);
+    }
+}
+
+/* ===== АВТОМАТИЧЕСКОЕ ПОЯВЛЕНИЕ СЕКЦИЙ ===== */
+.services-section-animate,
+.certificates-section-animate,
+.reviews-section-animate,
+.video-section-animate {
+    animation: sectionFadeIn 1s ease-out forwards;
+    opacity: 0;
+}
+
+.services-section-animate {
+    animation-delay: 0.3s;
+}
+
+.certificates-section-animate {
+    animation-delay: 0.5s;
+}
+
+.reviews-section-animate {
+    animation-delay: 0.7s;
+}
+
+.video-section-animate {
+    animation-delay: 0.9s;
+}
+
+@keyframes sectionFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== АВТОМАТИЧЕСКАЯ ПУЛЬСАЦИЯ ЗАГОЛОВКА ===== */
+.hero-title {
+    animation: autoGlow 4s ease-in-out infinite alternate, flicker 0.15s infinite;
+}
+
+@keyframes autoGlow {
+    0% {
+        text-shadow: 0 0 40px rgba(139, 0, 0, 0.6),
+                    0 0 80px rgba(74, 0, 128, 0.4);
+        opacity: 0.9;
+    }
+    50% {
+        text-shadow: 0 0 60px rgba(139, 0, 0, 0.9),
+                    0 0 100px rgba(74, 0, 128, 0.6);
+        opacity: 1;
+    }
+    100% {
+        text-shadow: 0 0 40px rgba(139, 0, 0, 0.6),
+                    0 0 80px rgba(74, 0, 128, 0.4);
+        opacity: 0.9;
+    }
+}
+
+@keyframes flicker {
+    0%, 100% { opacity: 1; }
+    92% { opacity: 1; }
+    93% { opacity: 0.85; }
+    94% { opacity: 1; }
+    96% { opacity: 0.9; }
+    97% { opacity: 1; }
+}
+
+/* ===== АВТОМАТИЧЕСКАЯ ПУЛЬСАЦИЯ РАМКИ ФОТО ===== */
+.hero-image-placeholder {
+    animation: autoBorderPulse 6s ease-in-out infinite;
+}
+
+@keyframes autoBorderPulse {
     0%, 100% {
         border-color: #1a0a0a;
         box-shadow: 
-            0 0 20px rgba(0, 0, 0, 0.6),
+            0 0 25px rgba(0, 0, 0, 0.5),
             inset 0 0 50px rgba(0, 0, 0, 0.8);
     }
     50% {
-        border-color: #2a1010;
+        border-color: #252020;
         box-shadow: 
-            0 0 30px rgba(40, 10, 10, 0.4),
+            0 0 40px rgba(30, 20, 20, 0.4),
             inset 0 0 50px rgba(0, 0, 0, 0.8);
     }
+}
+
+/* ===== ДЫМ / SMOKE АВТОМАТИЧЕСКИЙ ===== */
+.smoke-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 2;
+    opacity: 0.3;
+}
+
+.smoke-wisp {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(ellipse, rgba(40, 35, 45, 0.4) 0%, transparent 70%);
+    filter: blur(20px);
+    animation: smokeRise 12s ease-out infinite;
+    opacity: 0;
+}
+
+.smoke-wisp:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+    width: 80px;
+    height: 80px;
+}
+
+.smoke-wisp:nth-child(2) {
+    left: 30%;
+    animation-delay: 3s;
+    width: 120px;
+    height: 120px;
+}
+
+.smoke-wisp:nth-child(3) {
+    left: 50%;
+    animation-delay: 6s;
+    width: 90px;
+    height: 90px;
+}
+
+.smoke-wisp:nth-child(4) {
+    left: 70%;
+    animation-delay: 2s;
+    width: 110px;
+    height: 110px;
+}
+
+.smoke-wisp:nth-child(5) {
+    left: 85%;
+    animation-delay: 5s;
+    width: 70px;
+    height: 70px;
+}
+
+@keyframes smokeRise {
+    0% {
+        transform: translateY(250px) scale(1);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.4;
+    }
+    80% {
+        opacity: 0.2;
+    }
+    100% {
+        transform: translateY(-100px) scale(2.5);
+        opacity: 0;
+    }
+}
+
+/* ===== ПЛАВНОЕ ПОЯВЛЕНИЕ КАРТОЧЕК (AUTO) ===== */
+.certificate-item {
+    opacity: 0;
+    animation: cardFadeIn 0.8s ease forwards;
+}
+
+.certificate-item:nth-child(1) { animation-delay: 0.1s; }
+.certificate-item:nth-child(2) { animation-delay: 0.2s; }
+.certificate-item:nth-child(3) { animation-delay: 0.3s; }
+.certificate-item:nth-child(4) { animation-delay: 0.4s; }
+.certificate-item:nth-child(5) { animation-delay: 0.5s; }
+.certificate-item:nth-child(6) { animation-delay: 0.6s; }
+.certificate-item:nth-child(7) { animation-delay: 0.7s; }
+.certificate-item:nth-child(8) { animation-delay: 0.8s; }
+
+.service-card:nth-child(1) { animation-delay: 0.1s; }
+.service-card:nth-child(2) { animation-delay: 0.2s; }
+.service-card:nth-child(3) { animation-delay: 0.3s; }
+.service-card:nth-child(4) { animation-delay: 0.4s; }
+.service-card:nth-child(5) { animation-delay: 0.5s; }
+.service-card:nth-child(6) { animation-delay: 0.6s; }
+.service-card:nth-child(7) { animation-delay: 0.7s; }
+.service-card:nth-child(8) { animation-delay: 0.8s; }
+
+.review-card:nth-child(1) { animation-delay: 0.1s; }
+.review-card:nth-child(2) { animation-delay: 0.2s; }
+.review-card:nth-child(3) { animation-delay: 0.3s; }
+.review-card:nth-child(4) { animation-delay: 0.4s; }
+.review-card:nth-child(5) { animation-delay: 0.5s; }
+.review-card:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes cardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== SERVICE И REVIEW КАРТОЧКИ ===== */
+.service-card,
+.review-card {
+    opacity: 0;
+    animation: cardFadeIn 0.8s ease forwards;
+}
+
+.service-card:nth-child(1) { animation-delay: 0.1s; }
+.service-card:nth-child(2) { animation-delay: 0.2s; }
+.service-card:nth-child(3) { animation-delay: 0.3s; }
+.service-card:nth-child(4) { animation-delay: 0.4s; }
+.service-card:nth-child(5) { animation-delay: 0.5s; }
+.service-card:nth-child(6) { animation-delay: 0.6s; }
+.service-card:nth-child(7) { animation-delay: 0.7s; }
+.service-card:nth-child(8) { animation-delay: 0.8s; }
+
+.review-card:nth-child(1) { animation-delay: 0.1s; }
+.review-card:nth-child(2) { animation-delay: 0.2s; }
+.review-card:nth-child(3) { animation-delay: 0.3s; }
+.review-card:nth-child(4) { animation-delay: 0.4s; }
+.review-card:nth-child(5) { animation-delay: 0.5s; }
+.review-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* ===== АВТОМАТИЧЕСКАЯ ПУЛЬСАЦИЯ WHATSAPP ===== */
+.whatsapp-float {
+    animation: autoWhasappPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes autoWhasappPulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 4px 20px rgba(26, 92, 58, 0.5);
+    }
+    50% {
+        transform: scale(1.08);
+        box-shadow: 0 6px 30px rgba(26, 92, 58, 0.7);
+    }
+}
+
+/* ===== МЕРЦАНИЕ ЗВЁЗД (AUTO) ===== */
+.review-stars {
+    animation: autoStarPulse 3s ease-in-out infinite;
+}
+
+@keyframes autoStarPulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.7; }
+}
+
+/* ===== АВТОМАТИЧЕСКОЕ ПОДЧЁРКИВАНИЕ ССЫЛОК ===== */
+.footer-links li a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #252525;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.footer-links li a:hover::after {
+    transform: scaleX(1);
+}
+
+/* ===== ПЛАВНЫЙ SCROLL BAR ===== */
+html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #1a1a1a #050505;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1a1a1a;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #252525;
+}
+
+/* ===== ЛЕГКОЕ MERKABEh ===== */
+@keyframes subtleFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
 }
 
 /* ===== СКРОЛЛ-ИНДИКАТОР (можно добавить стрелку вниз) ===== */

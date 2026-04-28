@@ -196,6 +196,135 @@ body {
     }
 }
 
+/* ===== ДВИЖУЩИЕСЯ ИСКРЫ НА ФОНЕ ===== */
+.ember-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.ember {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: radial-gradient(circle, rgba(255, 68, 0, 0.8) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: emberFloat linear infinite;
+    opacity: 0;
+}
+
+.ember:nth-child(1) { left: 5%; animation-duration: 12s; animation-delay: 0s; }
+.ember:nth-child(2) { left: 15%; animation-duration: 15s; animation-delay: 2s; }
+.ember:nth-child(3) { left: 25%; animation-duration: 10s; animation-delay: 4s; }
+.ember:nth-child(4) { left: 35%; animation-duration: 18s; animation-delay: 1s; }
+.ember:nth-child(5) { left: 45%; animation-duration: 14s; animation-delay: 3s; }
+.ember:nth-child(6) { left: 55%; animation-duration: 11s; animation-delay: 5s; }
+.ember:nth-child(7) { left: 65%; animation-duration: 16s; animation-delay: 0.5s; }
+.ember:nth-child(8) { left: 75%; animation-duration: 13s; animation-delay: 2.5s; }
+.ember:nth-child(9) { left: 85%; animation-duration: 17s; animation-delay: 4.5s; }
+.ember:nth-child(10) { left: 95%; animation-duration: 9s; animation-delay: 1.5s; }
+.ember:nth-child(11) { left: 10%; animation-duration: 20s; animation-delay: 3.5s; }
+.ember:nth-child(12) { left: 40%; animation-duration: 8s; animation-delay: 5.5s; }
+.ember:nth-child(13) { left: 60%; animation-duration: 22s; animation-delay: 0.2s; }
+.ember:nth-child(14) { left: 80%; animation-duration: 11s; animation-delay: 2.2s; }
+.ember:nth-child(15) { left: 30%; animation-duration: 19s; animation-delay: 4.2s; }
+
+@keyframes emberFloat {
+    0% {
+        transform: translateY(100vh) scale(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-10vh) translateX(30px) scale(1);
+        opacity: 0;
+    }
+}
+
+/* ===== ДВИЖУЩАЯСЯ ТЕНЬ НА ФОНЕ ===== */
+.shadow-orb {
+    position: fixed;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(139, 0, 0, 0.02) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+    animation: shadowMove 25s ease-in-out infinite;
+}
+
+.shadow-orb:nth-child(1) {
+    width: 400px;
+    height: 400px;
+    top: 10%;
+    left: -100px;
+    animation-delay: 0s;
+}
+
+.shadow-orb:nth-child(2) {
+    width: 350px;
+    height: 350px;
+    top: 50%;
+    right: -100px;
+    animation-delay: 8s;
+}
+
+.shadow-orb:nth-child(3) {
+    width: 300px;
+    height: 300px;
+    bottom: 10%;
+    left: 30%;
+    animation-delay: 16s;
+}
+
+@keyframes shadowMove {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    33% {
+        transform: translate(50px, -30px) scale(1.1);
+    }
+    66% {
+        transform: translate(-30px, 50px) scale(0.9);
+    }
+}
+
+/* ===== ПУЛЬСИРУЮЩИЕ ЛИНИИ ===== */
+.pulse-line {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(139, 0, 0, 0.1), transparent);
+    pointer-events: none;
+    z-index: 2;
+    animation: pulseLine 8s ease-in-out infinite;
+}
+
+.pulse-line:nth-child(1) { top: 20%; animation-delay: 0s; }
+.pulse-line:nth-child(2) { top: 40%; animation-delay: 2s; }
+.pulse-line:nth-child(3) { top: 60%; animation-delay: 4s; }
+.pulse-line:nth-child(4) { top: 80%; animation-delay: 6s; }
+
+@keyframes pulseLine {
+    0%, 100% {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
 /* ===== АВТОМАТИЧЕСКИЕ АНИМАЦИИ (без hover) ===== */
 
 /* ===== ПОЯВЛЕНИЕ ПРИ ЗАГРУЗКЕ ===== */

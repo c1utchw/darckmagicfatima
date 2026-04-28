@@ -311,7 +311,9 @@
 /* ===== ВОРОНЫ И ПАУТИНА (скрываем на мобильных) ===== */
 @media (max-width: 768px) {
     .crows-container,
-    .web {
+    .web,
+    .ember-container,
+    .pulse-line {
         display: none;
     }
 }

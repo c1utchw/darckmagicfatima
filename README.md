@@ -9,6 +9,8 @@
 ```
 sitefatima_new/
 ├── index.html              # Главная страница
+├── services.html           # Страница услуг (детальная)
+├── certificates.html       # Страница сертификатов (галерея)
 ├── css/
 │   ├── main.css           # Основные стили
 │   ├── responsive.css     # Адаптивные стили
@@ -17,10 +19,14 @@ sitefatima_new/
 │   ├── main.js            # Основной скрипт
 │   └── video-scroll.js    # YouTube автоплей при скролле
 ├── images/
+│   ├── favicon.svg        # Иконка сайта
+│   ├── og-image.svg       # Картинка для соцсетей
 │   └── placeholder.svg    # Заглушка для фото
 ├── robots.txt             # Для SEO
 ├── sitemap.xml            # Карта сайта
 ├── .gitignore             # Игнор для Git
+├── deploy.bat             # Скрипт деплоя (Windows)
+├── deploy.ps1             # Скрипт деплоя (PowerShell)
 └── README.md              # Этот файл
 ```
 

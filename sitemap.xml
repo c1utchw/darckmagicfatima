@@ -44,4 +44,20 @@
         <priority>0.6</priority>
     </url>
     
+    <!-- Страница услуг (отдельная) -->
+    <url>
+        <loc>https://c1utchw.github.io/darckmagicfatima/services.html</loc>
+        <lastmod>2024-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Страница сертификатов (отдельная) -->
+    <url>
+        <loc>https://c1utchw.github.io/darckmagicfatima/certificates.html</loc>
+        <lastmod>2024-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
 </urlset>

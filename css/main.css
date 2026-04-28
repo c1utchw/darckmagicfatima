@@ -25,6 +25,286 @@
     --shadow-purple: 0 0 40px rgba(74, 0, 128, 0.4);
 }
 
+/* ===== НАВИГАЦИЯ ===== */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(5, 5, 5, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(30, 20, 20, 0.5);
+    z-index: 1000;
+    padding: 0 2rem;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+.nav-logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--color-accent);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--color-text-light);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--color-accent);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* ===== ЗАГОЛОВОК СТРАНИЦЫ ===== */
+.page-header {
+    padding: 8rem 2rem 4rem;
+    text-align: center;
+    background: linear-gradient(180deg, #000000 0%, #0d0208 100%);
+    position: relative;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(circle at 50% 50%, rgba(139, 0, 0, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.page-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    color: var(--color-accent-bright);
+    text-shadow: 0 0 30px rgba(139, 0, 0, 0.8);
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.page-subtitle {
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+/* ===== ДЕТАЛЬНЫЕ УСЛУГИ ===== */
+.services-detailed {
+    padding: 4rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.service-detail {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 2rem;
+    padding: 3rem 0;
+    border-bottom: 1px solid rgba(30, 20, 20, 0.5);
+}
+
+.service-detail:last-child {
+    border-bottom: none;
+}
+
+.service-number {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    color: var(--color-accent);
+    opacity: 0.3;
+    line-height: 1;
+}
+
+.service-content h2 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--color-text-light);
+    margin-bottom: 1rem;
+}
+
+.service-content p {
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.service-features {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.service-features li {
+    color: var(--color-text-muted);
+    padding: 0.3rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.service-features li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    opacity: 0.5;
+}
+
+.service-price-large {
+    display: inline-block;
+    font-size: 1.3rem;
+    color: var(--color-accent);
+    margin-right: 2rem;
+    font-weight: 600;
+}
+
+/* ===== ГАЛЕРЕЯ СЕРТИФИКАТОВ ===== */
+.certificates-gallery {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.certificates-gallery .certificates-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.certificate-item-large {
+    position: relative;
+}
+
+.certificate-placeholder-large {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: linear-gradient(145deg, #0a0a0f, #0d0208);
+    border: 2px solid rgba(30, 20, 20, 0.5);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.certificate-placeholder-large:hover {
+    border-color: var(--color-accent);
+}
+
+.certificate-placeholder-large .occult-symbol {
+    font-size: 3rem;
+    opacity: 0.3;
+    margin-bottom: 0.5rem;
+}
+
+.certificate-placeholder-large .occult-text {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.certificate-placeholder-large .occult-desc {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    opacity: 0.5;
+    margin-top: 0.5rem;
+}
+
+.certificate-img-large {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 10px;
+    display: none;
+}
+
+.certificate-img-large[src]:not([src=""]) {
+    display: block;
+}
+
+.certificate-img-large[src]:not([src=""]) + .certificate-placeholder-large,
+.certificate-item-large:has(.certificate-img-large[src]:not([src=""])) .certificate-placeholder-large {
+    display: none;
+}
+
+/* ===== АДАПТИВ НАВИГАЦИИ ===== */
+@media (max-width: 768px) {
+    .nav {
+        padding: 0 1rem;
+    }
+    
+    .nav-content {
+        height: 50px;
+    }
+    
+    .nav-logo {
+        font-size: 1.2rem;
+    }
+    
+    .nav-links {
+        gap: 1rem;
+    }
+    
+    .nav-links a {
+        font-size: 0.75rem;
+    }
+    
+    .page-header {
+        padding: 6rem 1rem 3rem;
+    }
+    
+    .service-detail {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .service-number {
+        font-size: 2rem;
+    }
+    
+    .certificates-gallery .certificates-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* ===== БАЗОВЫЕ СТИЛИ ===== */
 * {
     margin: 0;

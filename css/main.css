@@ -25,13 +25,14 @@ html { scroll-behavior: smooth; }
 body {
     font-family: var(--font-body);
     background: var(--bg);
-    color: var(--text);
+    color: #c9a961;
     line-height: 1.7;
     overflow-x: hidden;
+    font-weight: 500;
 }
 
-a { color: var(--text-dim); text-decoration: none; transition: color 0.3s; }
-a:hover { color: var(--gold-bright); }
+a { color: #b38728; text-decoration: none; transition: color 0.3s; font-weight: 500; }
+a:hover { color: #fcf6ba; }
 
 img { max-width: 100%; display: block; }
 
@@ -50,22 +51,21 @@ img { max-width: 100%; display: block; }
 .review-stars,
 .placeholder-text {
     background: linear-gradient(
-        135deg,
-        #bf953f 0%,
-        #fcf6ba 20%,
-        #b38728 40%,
-        #fbf5b7 60%,
-        #aa771c 80%,
-        #bf953f 100%
+        to right,
+        #8b6508 0%,
+        #d4af37 25%,
+        #ffd700 50%,
+        #d4af37 75%,
+        #8b6508 100%
     );
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
-    font-weight: 700;
-    text-shadow: none;
-    animation: goldShine 4s linear infinite;
+    font-weight: 900;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    animation: goldShine 3s linear infinite;
 }
 
 @keyframes goldShine {
@@ -127,10 +127,11 @@ img { max-width: 100%; display: block; }
 }
 
 .nav-links a {
-    color: var(--text-dim);
+    color: #d4af37;
     font-size: 0.75rem;
     letter-spacing: 2px;
     text-transform: uppercase;
+    font-weight: 600;
     position: relative;
     padding-bottom: 5px;
 }
@@ -139,8 +140,8 @@ img { max-width: 100%; display: block; }
     content: '';
     position: absolute;
     bottom: 0; left: 0;
-    width: 0; height: 1px;
-    background: var(--gold);
+    width: 0; height: 2px;
+    background: linear-gradient(90deg, #ffd700, #d4af37);
     transition: width 0.3s;
 }
 
@@ -188,19 +189,21 @@ img { max-width: 100%; display: block; }
     align-items: center;
     gap: 0.8rem;
     padding: 1rem 2.5rem;
-    background: transparent;
-    border: 1px solid var(--border-light);
-    color: var(--text-dim);
+    background: linear-gradient(135deg, rgba(212,175,55,0.1), rgba(255,215,0,0.05));
+    border: 2px solid #d4af37;
+    color: #ffd700;
     font-size: 0.8rem;
     letter-spacing: 2px;
     text-transform: uppercase;
+    font-weight: 700;
     transition: all 0.3s;
 }
 
 .whatsapp-btn:hover {
-    border-color: var(--gold);
-    color: var(--gold);
-    background: rgba(201,169,97,0.03);
+    border-color: #ffd700;
+    color: #fff;
+    background: linear-gradient(135deg, rgba(255,215,0,0.2), rgba(212,175,55,0.15));
+    box-shadow: 0 0 20px rgba(255,215,0,0.4);
 }
 
 .whatsapp-btn svg { fill: currentColor; }
@@ -237,8 +240,9 @@ img { max-width: 100%; display: block; }
 
 .placeholder-hint {
     font-size: 0.75rem;
-    color: var(--text-faint);
+    color: #d4af37;
     margin-top: 0.5rem;
+    font-weight: 500;
 }
 
 /* ===== SECTIONS ===== */
@@ -276,10 +280,11 @@ img { max-width: 100%; display: block; }
 }
 
 .welcome-text p {
-    color: var(--text-dim);
+    color: #d4af37;
     font-size: 0.95rem;
     line-height: 1.9;
     margin-bottom: 1rem;
+    font-weight: 500;
 }
 
 .video-container {
@@ -350,9 +355,10 @@ img { max-width: 100%; display: block; }
 }
 
 .service-info p {
-    color: var(--text-dim);
+    color: #d4af37;
     font-size: 0.9rem;
     line-height: 1.9;
+    font-weight: 500;
 }
 
 .service-divider {
@@ -402,9 +408,10 @@ img { max-width: 100%; display: block; }
     padding: 1rem;
     text-align: center;
     font-size: 0.75rem;
-    color: var(--text-dim);
+    color: #d4af37;
     letter-spacing: 2px;
     text-transform: uppercase;
+    font-weight: 600;
     border-top: 1px solid var(--border);
 }
 
@@ -458,17 +465,19 @@ img { max-width: 100%; display: block; }
 
 .review-meta span {
     font-size: 0.75rem;
-    color: var(--text-dim);
+    color: #d4af37;
     text-transform: uppercase;
     letter-spacing: 1px;
+    font-weight: 600;
 }
 
 .review-text {
-    color: var(--text-dim);
+    color: #d4af37;
     font-size: 0.9rem;
     line-height: 1.8;
     font-style: italic;
     margin-bottom: 1rem;
+    font-weight: 500;
 }
 
 .review-stars {
@@ -514,9 +523,10 @@ img { max-width: 100%; display: block; }
 
 .video-review-info span {
     font-size: 0.75rem;
-    color: var(--text-dim);
+    color: #d4af37;
     text-transform: uppercase;
     letter-spacing: 1px;
+    font-weight: 600;
 }
 
 /* ===== FOOTER ===== */
@@ -550,9 +560,10 @@ img { max-width: 100%; display: block; }
 
 .footer-section p,
 .footer-section a {
-    color: var(--text-dim);
+    color: #d4af37;
     font-size: 0.85rem;
     line-height: 2;
+    font-weight: 500;
 }
 
 .footer-links {
@@ -566,15 +577,17 @@ img { max-width: 100%; display: block; }
     margin-top: 1rem;
     font-size: 0.8rem;
     line-height: 1.8;
-    color: var(--text-dim);
+    color: #d4af37;
+    font-weight: 500;
 }
 
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
     border-top: 1px solid var(--border);
-    color: var(--text-dim);
+    color: #d4af37;
     font-size: 0.8rem;
+    font-weight: 500;
 }
 
 /* ===== WHATSAPP FLOAT ===== */
@@ -599,12 +612,16 @@ img { max-width: 100%; display: block; }
 }
 
 .whatsapp-float svg {
-    fill: var(--text-dim);
+    fill: #d4af37;
     width: 28px;
     height: 28px;
+    filter: drop-shadow(0 0 5px rgba(255,215,0,0.5));
 }
 
-.whatsapp-float:hover svg { fill: var(--gold); }
+.whatsapp-float:hover svg { 
+    fill: #ffd700; 
+    filter: drop-shadow(0 0 10px rgba(255,215,0,0.8));
+}
 
 /* ===== FOG ===== */
 .fog-container {

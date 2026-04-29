@@ -571,17 +571,12 @@ img { max-width: 100%; display: block; }
     padding: 1.5rem;
 }
 
-.video-review-info h4 {
+.video-review-info span {
     font-family: var(--font-heading);
     font-size: 1.1rem;
-    margin-bottom: 0.3rem;
-}
-
-.video-review-info span {
-    font-size: 0.75rem;
     color: #d4af37;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     font-weight: 600;
 }
 

@@ -84,6 +84,18 @@
         height: 280px;
     }
     
+    .welcome-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .services-grid,
+    .certificates-grid,
+    .reviews-grid,
+    .video-reviews-grid {
+        grid-template-columns: 1fr;
+    }
+    
     .section-title {
         letter-spacing: 2px;
         margin-bottom: 2rem;

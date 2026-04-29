@@ -549,9 +549,9 @@ img { max-width: 100%; display: block; }
 
 .video-reviews-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -571,12 +571,17 @@ img { max-width: 100%; display: block; }
     padding: 1.5rem;
 }
 
-.video-review-info span {
+.video-review-info h4 {
     font-family: var(--font-heading);
     font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.video-review-info span {
+    font-size: 0.75rem;
     color: #d4af37;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     font-weight: 600;
 }
 

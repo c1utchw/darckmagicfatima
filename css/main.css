@@ -158,7 +158,7 @@ img { max-width: 100%; display: block; }
     text-align: center;
     padding: 100px 2rem 4rem;
     position: relative;
-    background: url('images/fonpc.png?v=3.0.1') center/cover no-repeat;
+    background: url('images/fonpc.png?v=4.0.2') center/cover no-repeat !important;
 }
 
 .hero::before {
@@ -433,7 +433,7 @@ img { max-width: 100%; display: block; }
 
 .certificates-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -462,9 +462,8 @@ img { max-width: 100%; display: block; }
 
 /* Разные размеры для сертификатов */
 .certificate-item:nth-child(1) { min-height: 280px; }
-.certificate-item:nth-child(2) { min-height: 320px; }
-.certificate-item:nth-child(3) { min-height: 360px; }
-.certificate-item:nth-child(4) { min-height: 300px; }
+.certificate-item:nth-child(2) { min-height: 340px; }
+.certificate-item:nth-child(3) { min-height: 300px; }
 
 /* ===== REVIEWS ===== */
 .reviews {
